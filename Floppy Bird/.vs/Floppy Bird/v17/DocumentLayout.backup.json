@@ -3,24 +3,40 @@
   "WorkspaceRootPath": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\assets\\pipemiddlescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\pipemiddlescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|c:\\code\\floppybird\\floppybird\\floppy bird\\assets\\skinmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\skinmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|c:\\code\\floppybird\\floppybird\\floppy bird\\assets\\birdscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\birdscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\assets\\logicscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\logicscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\assets\\pipespawnerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\pipespawnerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\assets\\pipemovescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\pipemovescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|c:\\code\\floppybird\\floppybird\\floppy bird\\assets\\birdscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\birdscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\assets\\pipespawnerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\pipespawnerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\assets\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\assets\\titlelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\titlelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\assets\\pipemiddlescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\pipemiddlescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\assets\\particlemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\particlemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,38 +51,90 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "SkinManager.cs",
+              "DocumentMoniker": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\SkinManager.cs",
+              "RelativeDocumentMoniker": "Assets\\SkinManager.cs",
+              "ToolTip": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\SkinManager.cs",
+              "RelativeToolTip": "Assets\\SkinManager.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAcwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T03:20:55.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ParticleManager.cs",
+              "DocumentMoniker": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\ParticleManager.cs",
+              "RelativeDocumentMoniker": "Assets\\ParticleManager.cs",
+              "ToolTip": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\ParticleManager.cs",
+              "RelativeToolTip": "Assets\\ParticleManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T23:21:09.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AudioManager.cs",
+              "DocumentMoniker": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\AudioManager.cs",
+              "RelativeDocumentMoniker": "Assets\\AudioManager.cs",
+              "ToolTip": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\AudioManager.cs",
+              "RelativeToolTip": "Assets\\AudioManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T17:14:05.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TitleLogic.cs",
+              "DocumentMoniker": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\TitleLogic.cs",
+              "RelativeDocumentMoniker": "Assets\\TitleLogic.cs",
+              "ToolTip": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\TitleLogic.cs",
+              "RelativeToolTip": "Assets\\TitleLogic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T16:54:36.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "PipeMiddleScript.cs",
               "DocumentMoniker": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\PipeMiddleScript.cs",
               "RelativeDocumentMoniker": "Assets\\PipeMiddleScript.cs",
               "ToolTip": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\PipeMiddleScript.cs",
               "RelativeToolTip": "Assets\\PipeMiddleScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-16T12:45:55.849Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "LogicScript.cs",
               "DocumentMoniker": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\LogicScript.cs",
               "RelativeDocumentMoniker": "Assets\\LogicScript.cs",
               "ToolTip": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\LogicScript.cs",
               "RelativeToolTip": "Assets\\LogicScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-16T12:33:39.239Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "PipeSpawnerScript.cs",
               "DocumentMoniker": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\PipeSpawnerScript.cs",
               "RelativeDocumentMoniker": "Assets\\PipeSpawnerScript.cs",
               "ToolTip": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\PipeSpawnerScript.cs",
               "RelativeToolTip": "Assets\\PipeSpawnerScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-07T13:58:31.62Z",
               "EditorCaption": ""
@@ -86,13 +154,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "BirdScript.cs",
               "DocumentMoniker": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\BirdScript.cs",
               "RelativeDocumentMoniker": "Assets\\BirdScript.cs",
               "ToolTip": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\BirdScript.cs",
               "RelativeToolTip": "Assets\\BirdScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwA8AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-07T13:28:37.102Z",
               "EditorCaption": ""

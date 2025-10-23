@@ -7,10 +7,14 @@ public class BirdScript : MonoBehaviour
     public float flapStrength;
     public LogicScript logic;
     public bool birdIsAlive = true;
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (SkinManager.Instance != null)
+        {
+            SkinManager.Instance.ApplySelectedSkins();
+        }
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 

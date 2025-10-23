@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Logic
   - Bird
+  - Achievement50Total
+  - FirstPoint
+  - Wing
   layers:
   - Default
   - TransparentFX
