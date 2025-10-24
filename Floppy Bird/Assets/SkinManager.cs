@@ -2,55 +2,49 @@ using UnityEngine;
 
 public class SkinManager : MonoBehaviour
 {
-    public static SkinManager Instance;
+    [SerializeField] Sprite redBird, spaceBird;
+    [SerializeField] Sprite redWing, spaceWing;
 
-    public Sprite redBird, spaceBird;
-    public Sprite redWing, spaceWing;
-
-    public Sprite selectedBirdSkin;
-    public Sprite selectedWingSkin;
-
-    private void Awake()
+    private void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        ApplySavedSkin();
     }
 
-    public void setBird(Sprite birdSprite)
+    public void SelectRedSkin()
     {
-        selectedBirdSkin = birdSprite;
-        Debug.Log("Set bird sprite  to: " + birdSprite.name);
+        PlayerPrefs.SetString("SelectedSkin", "Red");
+        PlayerPrefs.Save();
+        ApplySavedSkin();
+        Debug.Log("Selected Red skin");
     }
 
-    public void setWing(Sprite wingSprite)
+    public void SelectSpaceSkin()
     {
-        selectedWingSkin = wingSprite;
-        Debug.Log("Set bird sprite  to: " + wingSprite.name);
-
+        PlayerPrefs.SetString("SelectedSkin", "Space");
+        PlayerPrefs.Save();
+        ApplySavedSkin();
+        Debug.Log("Selected Space skin");
     }
 
-
-    public void ApplySelectedSkins()
+    private void ApplySavedSkin()
     {
+        string selectedSkin = PlayerPrefs.GetString("SelectedSkin", "Red");
+
         GameObject bird = GameObject.FindGameObjectWithTag("Bird");
         GameObject wing = GameObject.FindGameObjectWithTag("Wing");
 
-        if (bird != null && selectedBirdSkin != null)
+        if (bird != null && wing != null)
         {
-            bird.GetComponent<SpriteRenderer>().sprite = selectedBirdSkin;
+            if (selectedSkin == "Red")
+            {
+                bird.GetComponent<SpriteRenderer>().sprite = redBird;
+                wing.GetComponent<SpriteRenderer>().sprite = redWing;
+            }
+            else if (selectedSkin == "Space")
+            {
+                bird.GetComponent<SpriteRenderer>().sprite = spaceBird;
+                wing.GetComponent<SpriteRenderer>().sprite = spaceWing;
+            }
         }
-
-        if (wing != null && selectedWingSkin != null)
-        {
-            wing.GetComponent<SpriteRenderer>().sprite = selectedWingSkin;
-        }
-        
     }
 }

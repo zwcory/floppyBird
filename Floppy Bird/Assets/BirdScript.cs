@@ -5,17 +5,17 @@ public class BirdScript : MonoBehaviour
 
     public Rigidbody2D myRigidbody2d;
     public float flapStrength;
+    public float halfFlapStrength;
     public LogicScript logic;
     public bool birdIsAlive = true;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (SkinManager.Instance != null)
-        {
-            SkinManager.Instance.ApplySelectedSkins();
-        }
+
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        halfFlapStrength = 0.5f * flapStrength;
+        myRigidbody2d.linearVelocity = Vector2.up * (flapStrength + halfFlapStrength);
     }
 
     // Update is called once per frame

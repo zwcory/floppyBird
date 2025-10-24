@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\skinmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|c:\\code\\floppybird\\floppybird\\floppy bird\\assets\\birdscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\assets\\birdscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B8D0948-9067-0D9E-A03B-736EA45886F5}|Assembly-CSharp.csproj|solutionrelative:assets\\birdscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "Assets\\SkinManager.cs",
               "ToolTip": "C:\\Code\\FloppyBird\\floppyBird\\Floppy Bird\\Assets\\SkinManager.cs",
               "RelativeToolTip": "Assets\\SkinManager.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAcwCUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-23T03:20:55.103Z",
               "EditorCaption": ""
@@ -71,8 +71,7 @@
               "RelativeToolTip": "Assets\\ParticleManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T23:21:09.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T23:21:09.105Z"
             },
             {
               "$type": "Document",
@@ -84,8 +83,7 @@
               "RelativeToolTip": "Assets\\AudioManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:14:05.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T17:14:05.07Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "RelativeToolTip": "Assets\\TitleLogic.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:54:36.97Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T16:54:36.97Z"
             },
             {
               "$type": "Document",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "Assets\\PipeMiddleScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T12:45:55.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T12:45:55.849Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "Assets\\LogicScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T12:33:39.239Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T12:33:39.239Z"
             },
             {
               "$type": "Document",
@@ -136,8 +131,7 @@
               "RelativeToolTip": "Assets\\PipeSpawnerScript.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwAgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T13:58:31.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-07T13:58:31.62Z"
             },
             {
               "$type": "Document",
@@ -149,8 +143,7 @@
               "RelativeToolTip": "Assets\\PipeMoveScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T13:53:25.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-07T13:53:25.863Z"
             },
             {
               "$type": "Document",
@@ -162,8 +155,7 @@
               "RelativeToolTip": "Assets\\BirdScript.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwA8AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T13:28:37.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-07T13:28:37.102Z"
             }
           ]
         }

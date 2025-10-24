@@ -4,28 +4,26 @@ using UnityEngine.UI;
 
 public class TitleLogic : MonoBehaviour
 {
-    
+    public LevelLoader levelLoader;
+
     public void startGame()
     {
-        //SceneManager.LoadScene(SceneManager.GetSceneByName("SampleScene").name);
-        SceneManager.LoadScene("MainGame");
+        StartCoroutine(levelLoader.LoadSceneByName("MainGame"));
     }
 
     public void loadMenu()
     {
-        //SceneManager.LoadScene(SceneManager.GetSceneByName("SampleScene").name);
-        SceneManager.LoadScene("Menu");
+        StartCoroutine(levelLoader.LoadSceneByName("Menu"));
+
     }
 
     public void loadAchievments()
     {
-        //SceneManager.LoadScene(SceneManager.GetSceneByName("SampleScene").name);
-        SceneManager.LoadScene("Achievements");
+        StartCoroutine(levelLoader.LoadSceneByName("Achievements"));
     }
     public void loadCustomization
         ()
     {
-        //SceneManager.LoadScene(SceneManager.GetSceneByName("SampleScene").name);
-        SceneManager.LoadScene("Customization");
+        StartCoroutine(levelLoader.LoadSceneByName("Customization"));
     }
 }
