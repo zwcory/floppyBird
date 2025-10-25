@@ -6,7 +6,7 @@ using TMPro;
 public class LogicScript : MonoBehaviour
 {
     public int playerScore;
-    public Text scoreText;
+    public TextMeshProUGUI scoreText;
     public GameObject gameOverScene;
     public TextMeshProUGUI highScore;
     public LevelLoader levelLoader;

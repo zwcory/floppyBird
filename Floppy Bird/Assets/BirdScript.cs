@@ -41,7 +41,7 @@ public class BirdScript : MonoBehaviour
 
     private void deadBird()
     {
-        logic.gameOver();
         birdIsAlive = false;
+        logic.gameOver();
     }
 }
