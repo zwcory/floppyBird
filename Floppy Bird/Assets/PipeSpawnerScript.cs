@@ -6,6 +6,8 @@ public class PipeSpawnerScript : MonoBehaviour
     public float spawnRate;
     private float timer = 0;
     public float heightOffset;
+    public GameObject coin;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,7 +31,13 @@ public class PipeSpawnerScript : MonoBehaviour
     {
         float lowestPoint = transform.position.y - heightOffset;
         float highestPoint = transform.position.y + heightOffset;
-        Instantiate(pipe, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
-
+        float randomSpawn = Random.Range(lowestPoint, highestPoint);
+        Instantiate(pipe, new Vector3(transform.position.x, randomSpawn , 0), transform.rotation);
+        
+        int randomNumber = Random.Range(1, 6);
+        if (randomNumber == 1)
+        {
+            Instantiate(coin, new Vector3(transform.position.x, randomSpawn, 0), transform.rotation);
+        }
     }
 }

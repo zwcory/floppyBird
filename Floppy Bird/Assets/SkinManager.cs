@@ -5,6 +5,12 @@ public class SkinManager : MonoBehaviour
     [SerializeField] Sprite redBird, spaceBird;
     [SerializeField] Sprite redWing, spaceWing;
 
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
+
     private void Start()
     {
         ApplySavedSkin();
@@ -15,6 +21,7 @@ public class SkinManager : MonoBehaviour
         PlayerPrefs.SetString("SelectedSkin", "Red");
         PlayerPrefs.Save();
         ApplySavedSkin();
+        audioManager.PlaySFX(audioManager.selectClip);
         Debug.Log("Selected Red skin");
     }
 
@@ -23,6 +30,7 @@ public class SkinManager : MonoBehaviour
         PlayerPrefs.SetString("SelectedSkin", "Space");
         PlayerPrefs.Save();
         ApplySavedSkin();
+        audioManager.PlaySFX(audioManager.selectClip);
         Debug.Log("Selected Space skin");
     }
 

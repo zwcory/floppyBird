@@ -9,6 +9,7 @@ TagManager:
   - Achievement50Total
   - FirstPoint
   - Wing
+  - AudioManager
   layers:
   - Default
   - TransparentFX

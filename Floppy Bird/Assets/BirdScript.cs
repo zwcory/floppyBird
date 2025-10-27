@@ -8,7 +8,13 @@ public class BirdScript : MonoBehaviour
     public float halfFlapStrength;
     public LogicScript logic;
     public bool birdIsAlive = true;
-    
+
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,7 +47,25 @@ public class BirdScript : MonoBehaviour
 
     private void deadBird()
     {
+        if (birdIsAlive)
+        {
+            audioManager.PlaySFX(audioManager.failClip);
+            myRigidbody2d.linearVelocity = Vector2.up * flapStrength * 0.70f;
+            transform.position = new Vector3(transform.position.x, transform.position.y, -1f);
+            
+            // stops collisions with pipes
+            GetComponent<Collider2D>().enabled = false;
+            myRigidbody2d.AddTorque(20f);
+        }
         birdIsAlive = false;
         logic.gameOver();
+        StartCoroutine(StopAfterFall());
     }
+
+    private System.Collections.IEnumerator StopAfterFall()
+    {
+        yield return new WaitForSeconds(1.5f);
+        myRigidbody2d.simulated = false;
+    }
+
 }
