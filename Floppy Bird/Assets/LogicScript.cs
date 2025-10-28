@@ -11,6 +11,7 @@ public class LogicScript : MonoBehaviour
 
     private float coins;
 
+    public AchievementManager achievementManager;
 
     AudioManager audioManager;
 
@@ -24,6 +25,9 @@ public class LogicScript : MonoBehaviour
         // TODO CHANGE TO 0 INSTEAD OF 100, AND IN TITLE LOGIC
         coins = PlayerPrefs.GetFloat("Coins", 100f);
         highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        achievementManager = GameObject.FindGameObjectWithTag("AchievementManager").GetComponent<AchievementManager>();
+        achievementManager.PatchLogic();
+        achievementManager.InitializeAchievements();
     }
 
 

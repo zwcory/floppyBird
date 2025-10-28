@@ -42,8 +42,11 @@ public class TitleLogic : MonoBehaviour
             coinConverter = coins / 1000000000;
             coinsText = (coinConverter.ToString("F2") + "B");
         }
-        coinsTextMenu.text = coinsText;
-        coinsTextCustomize.text = coinsText;
+        if (coinsTextMenu != null) {
+            coinsTextMenu.text = coinsText;
+            coinsTextCustomize.text = coinsText;
+        }
+        
     }
 
     private void Awake()
