@@ -2,8 +2,17 @@ using UnityEngine;
 
 public class SkinManager : MonoBehaviour
 {
+    // TODO
+    // CREATE ActiveMode pref
+
+
     [SerializeField] Sprite redBird, spaceBird;
     [SerializeField] Sprite redWing, spaceWing;
+
+
+    public int wasModeChanged;
+    public AchievementManager achievementManager;
+
 
     AudioManager audioManager;
     private void Awake()
@@ -13,7 +22,10 @@ public class SkinManager : MonoBehaviour
 
     private void Start()
     {
+        wasModeChanged = PlayerPrefs.GetInt("WasModeChanged", 0);
         ApplySavedSkin();
+        achievementManager = GameObject.FindGameObjectWithTag("AchievementManager").GetComponent<AchievementManager>();
+        achievementManager.PatchSkinManager();
     }
 
     public void SelectRedSkin()
@@ -37,6 +49,7 @@ public class SkinManager : MonoBehaviour
     private void ApplySavedSkin()
     {
         string selectedSkin = PlayerPrefs.GetString("SelectedSkin", "Red");
+
 
         GameObject bird = GameObject.FindGameObjectWithTag("Bird");
         GameObject wing = GameObject.FindGameObjectWithTag("Wing");

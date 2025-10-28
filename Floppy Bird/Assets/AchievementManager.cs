@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class AchievementManager : MonoBehaviour
 {
     public LogicScript logic;
+    public SkinManager skinManager;
     [SerializeField] GameObject achievment1;
     [SerializeField] GameObject achievment2;
     [SerializeField] GameObject achievment3;
@@ -16,17 +17,7 @@ public class AchievementManager : MonoBehaviour
 
     public List<Achievement> achievements;
     
-
-    public int testInt;
-    public float testFloat;
-
     public static AchievementManager instance;
-
-
-    // TODO
-    //  - Move manager object to title screen
-    //  - Connect achievement objects to script with tags
-
 
 
     public void Awake()
@@ -80,8 +71,15 @@ public class AchievementManager : MonoBehaviour
 
     }
 
+    public void PatchSkinManager()
+    {
+        skinManager = GameObject.FindGameObjectWithTag("SkinManager").GetComponent<SkinManager>();
+
+    }
+
     public void InitializeAchievements()
     {
+        //if ((logic == null) || (skinManager == null))
         if (logic == null)
         {
             return;
@@ -91,9 +89,14 @@ public class AchievementManager : MonoBehaviour
             return;
         }
         achievements = new List<Achievement>();
-        achievements.Add(new Achievement("FirstPoint", "Score your first point", "none", 109, (object o) => logic.playerScore >= 1));
-        // todo -  add a total score pref that updates in logic
-        achievements.Add(new Achievement("50Total", "Score a total of 50 points", "none", 504, (object o) => logic.playerScore >= 5));
+        achievements.Add(new Achievement("FirstPoint", "Score your first point", "none", 25, (object o) => logic.playerScore >= 1));
+        achievements.Add(new Achievement("50Up", "Score a total of 50 points", "none", 50, (object o) => logic.totalPoints >= 50));
+        achievements.Add(new Achievement("CrashCourse", "Play 20 games", "none", 150, (object o) => logic.plays >= 20));
+        achievements.Add(new Achievement("HappyFlappy", "Get a high score of 20", "none", 200, (object o) => logic.highScore >= 20));
+        achievements.Add(new Achievement("HighFlyer", "Get a high score of 50", "none", 500, (object o) => logic.highScore >= 50));
+        achievements.Add(new Achievement("Unstoppable", "Get a high score of 200", "none", 10000, (object o) => logic.highScore >= 20));
+        achievements.Add(new Achievement("FeelsFresh", "Change the mode", "none", 500, (object o) => skinManager.wasModeChanged >= 1));
+        achievements.Add(new Achievement("FilthyRich", "Earn a total of 20k coins", "coin", 0, (object o) => logic.totalCoins >= 20000));
 
         foreach (var achievement in achievements)
         {
@@ -101,7 +104,6 @@ public class AchievementManager : MonoBehaviour
             if (wasAchieved > 0)
             {
                 achievement.SetCompletion();
-                achievement.UpdateUI();
             }
         }
     }
@@ -175,24 +177,6 @@ public class Achievement
             achieved = true;
     }
 
-
-    // Doesnt work needs fixing
-    public void UpdateUI()
-    {
-        if (ui == null)
-        {
-            ui = GameObject.FindGameObjectWithTag(title);
-            if (ui == null)
-            {
-                Debug.LogWarning($"No UI found for {title}");
-                return;
-            }
-        }
-
-        var texts = ui.GetComponentsInChildren<TextMeshProUGUI>();
-        foreach (var text in texts)
-            text.color = Color.white;
-    }
 
     public bool RequirementsMet()
     {

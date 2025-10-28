@@ -198,8 +198,13 @@ MonoBehaviour:
   playerScore: 0
   scoreText: {fileID: 212932547}
   gameOverScene: {fileID: 193913164}
-  highScore: {fileID: 260823151}
+  highScoreText: {fileID: 260823151}
   levelLoader: {fileID: 2222205010468335368}
+  totalCoins: 0
+  plays: 0
+  totalPoints: 0
+  highScore: 0
+  achievementManager: {fileID: 0}
 --- !u!4 &138255513
 Transform:
   m_ObjectHideFlags: 0
@@ -249,6 +254,8 @@ MonoBehaviour:
   spaceBird: {fileID: -1939024889431042349, guid: 6d5756f1409432941957dd0ea25ab62c, type: 3}
   redWing: {fileID: -7297196468488472043, guid: 744c2ecf668597e459f2b3cf682c23da, type: 3}
   spaceWing: {fileID: 3604035845478683098, guid: 4f301bdee13fe27489045d234d2d1805, type: 3}
+  wasModeChanged: 0
+  achievementManager: {fileID: 0}
 --- !u!1 &193913164
 GameObject:
   m_ObjectHideFlags: 0

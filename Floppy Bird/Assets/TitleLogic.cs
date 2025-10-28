@@ -17,11 +17,9 @@ public class TitleLogic : MonoBehaviour
     public TextMeshProUGUI coinsTextCustomize;
     private string coinsText;
 
-
     public void Start()
     {
-        // TODO CHANGE TO 0 INSTEAD OF 100, AND IN LOGIC SCRIPT
-        coins = PlayerPrefs.GetFloat("Coins", 100f);
+        coins = PlayerPrefs.GetFloat("Coins", 0);
         if (coins < 1000)
         {
             coinsText = coins.ToString();

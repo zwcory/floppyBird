@@ -6,10 +6,14 @@ public class LogicScript : MonoBehaviour
     public int playerScore;
     public TextMeshProUGUI scoreText;
     public GameObject gameOverScene;
-    public TextMeshProUGUI highScore;
+    public TextMeshProUGUI highScoreText;
     public LevelLoader levelLoader;
 
     private float coins;
+    public float totalCoins;
+    public int plays;
+    public int totalPoints;
+    public int highScore;
 
     public AchievementManager achievementManager;
 
@@ -22,9 +26,13 @@ public class LogicScript : MonoBehaviour
     }
     public void Start()
     {
-        // TODO CHANGE TO 0 INSTEAD OF 100, AND IN TITLE LOGIC
-        coins = PlayerPrefs.GetFloat("Coins", 100f);
-        highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        coins = PlayerPrefs.GetFloat("Coins", 0f);
+        totalCoins = PlayerPrefs.GetFloat("TotalCoins", 0f);
+        plays = PlayerPrefs.GetInt("Plays" , 0);
+        totalPoints += PlayerPrefs.GetInt("TotalPoints", 0);
+        highScore += PlayerPrefs.GetInt("HighScore", 0);
+
+        highScoreText.text = highScore.ToString();
         achievementManager = GameObject.FindGameObjectWithTag("AchievementManager").GetComponent<AchievementManager>();
         achievementManager.PatchLogic();
         achievementManager.InitializeAchievements();
@@ -39,7 +47,7 @@ public class LogicScript : MonoBehaviour
         coins ++;
         if (playerScore > PlayerPrefs.GetInt("HighScore", 0))
         {
-            highScore.text = playerScore.ToString();
+            highScoreText.text = playerScore.ToString();
             PlayerPrefs.SetInt("HighScore", playerScore);
             Debug.Log("New High Score " + playerScore);
         }
@@ -62,7 +70,9 @@ public class LogicScript : MonoBehaviour
     public void addCoin(int coin)
     {
         coins += coin;
+        totalCoins += coin;
         PlayerPrefs.SetFloat("Coins", coins);
+        PlayerPrefs.SetFloat("TotalCoins", totalCoins);
     }
 
 }

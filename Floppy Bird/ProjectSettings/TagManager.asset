@@ -10,7 +10,14 @@ TagManager:
   - Wing
   - AudioManager
   - AchievementManager
-  - 50Total
+  - HappyFlappy
+  - 50Up
+  - SkinManager
+  - CrashCourse
+  - HighFlyer
+  - Unstoppable
+  - FeelsFresh
+  - FilthyRich
   layers:
   - Default
   - TransparentFX
