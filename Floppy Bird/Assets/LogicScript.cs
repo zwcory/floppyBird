@@ -19,6 +19,10 @@ public class LogicScript : MonoBehaviour
 
     AudioManager audioManager;
 
+    // todo
+    // update pipe spawner and pipe movescript to increase speed after certain scores
+
+
 
     private void Awake()
     {
