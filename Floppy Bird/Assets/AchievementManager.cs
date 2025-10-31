@@ -73,9 +73,9 @@ public class AchievementManager : MonoBehaviour
 
     public void PatchSkinManager()
     {
-        skinManager = GameObject.FindGameObjectWithTag("SkinManager").GetComponent<SkinManager>();
-
+        skinManager = GameObject.FindGameObjectWithTag("Logic").GetComponent<SkinManager>();
     }
+
 
     public void InitializeAchievements()
     {

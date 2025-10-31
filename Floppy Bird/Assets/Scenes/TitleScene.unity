@@ -5906,13 +5906,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logic: {fileID: 0}
+  skinManager: {fileID: 0}
   achievment1: {fileID: 0}
   achievment2: {fileID: 0}
   achievment3: {fileID: 0}
   achievment4: {fileID: 0}
   achievment5: {fileID: 0}
-  testInt: 0
-  testFloat: 0
 --- !u!4 &1243788566
 Transform:
   m_ObjectHideFlags: 0

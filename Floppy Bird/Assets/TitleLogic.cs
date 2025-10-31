@@ -20,31 +20,39 @@ public class TitleLogic : MonoBehaviour
     public void Start()
     {
         coins = PlayerPrefs.GetFloat("Coins", 0);
-        if (coins < 1000)
+        
+    }
+    private void Update()
+    {
+        UpdateCoinDisplay();
+    }
+    private string FormatCoins(float coinAmount, string decimalPlaces)
+    {
+        if (coinAmount >= 1000000000)
         {
-            coinsText = coins.ToString();
-
+            return (coinAmount / 1000000000).ToString(decimalPlaces) + "B";
         }
-        else if (coins > 1000f && coins < 1000000)
+        else if (coinAmount >= 1000000)
         {
-            coinConverter = coins / 1000;
-            coinsText = (coinConverter.ToString("F2") + "K");
+            return (coinAmount / 1000000).ToString(decimalPlaces) + "M";
         }
-        else if (coins > 1000000 && coins < 1000000000)
+        else if (coinAmount >= 1000)
         {
-            coinConverter = coins / 1000000;
-            coinsText = (coinConverter.ToString("F2") + "M");
+            return (coinAmount / 1000).ToString(decimalPlaces) + "K";
         }
         else
         {
-            coinConverter = coins / 1000000000;
-            coinsText = (coinConverter.ToString("F2") + "B");
+            return coinAmount.ToString("F0"); // Use F0 for whole numbers
         }
-        if (coinsTextMenu != null) {
-            coinsTextMenu.text = coinsText;
-            coinsTextCustomize.text = coinsText;
-        }
-        
+    }
+
+    private void UpdateCoinDisplay()
+    {
+        coins = PlayerPrefs.GetFloat("Coins", 0); 
+        string formattedCoinsF2 = FormatCoins(coins, "F2");
+        string formattedCoinsF0 = FormatCoins(coins, "F1");
+        if (coinsTextMenu != null) coinsTextMenu.text = formattedCoinsF2;
+        if (coinsTextCustomize != null) coinsTextCustomize.text = formattedCoinsF0;
     }
 
     private void Awake()

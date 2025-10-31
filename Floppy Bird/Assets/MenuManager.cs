@@ -12,13 +12,11 @@ public class MenuManager : MonoBehaviour
     {
         // find achievements that have been instantiated
         var achievements = AchievementManager.instance.achievements;
-        Debug.Log($" Achievements are: {achievements.Count}");
         foreach (var achievement in achievements)
         {
-            Debug.Log($" achievement {achievement.title} ,  achieved: {achievement.achieved}");
 
             textHolder = GameObject.FindGameObjectWithTag(achievement.title);
-            Debug.Log($" textHolder: {textHolder}");
+            
 
             if (achievement.achieved)
             {

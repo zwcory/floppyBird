@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8563610272882709853}
+  - component: {fileID: 3883822164776818924}
   m_Layer: 0
   m_Name: CoinTopLayer
   m_TagString: Untagged
@@ -32,6 +33,18 @@ Transform:
   - {fileID: 4110844153559288741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3883822164776818924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113662218859595917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fa02333f9fdfb4dbb159f92ef9dd2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5419104455992008492
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 0}
+  fish: {fileID: 0}
   logic: {fileID: 0}
   transition: {fileID: 4163359308848883955}
-  moveSpeed: 5
   deadZone: -45

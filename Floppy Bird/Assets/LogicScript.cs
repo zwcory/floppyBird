@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class LogicScript : MonoBehaviour
 {
@@ -15,12 +16,23 @@ public class LogicScript : MonoBehaviour
     public int totalPoints;
     public int highScore;
 
+    public int speedIncreaser = 15;
+    public int speedIncreaserCount;
     public AchievementManager achievementManager;
+
+    [Header("Difficulty References")]
+    public PipeSpawnerScript pipeSpawn;     
+    public PipeMoveScript pipeMoveScript;   
+    public CoinMoveScript coinMoveScript;
+
+
+
+
 
     AudioManager audioManager;
 
-    // todo
-    // update pipe spawner and pipe movescript to increase speed after certain scores
+    private bool[] difficultyTriggered = new bool[20];
+
 
 
 
@@ -39,16 +51,55 @@ public class LogicScript : MonoBehaviour
         highScoreText.text = highScore.ToString();
         achievementManager = GameObject.FindGameObjectWithTag("AchievementManager").GetComponent<AchievementManager>();
         achievementManager.PatchLogic();
+        achievementManager.PatchSkinManager();
         achievementManager.InitializeAchievements();
     }
 
+    private void Update()
+    {
+        // TESTING ONLY - Remove this later!
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            addScore(5); // Quickly add 5 points to test
+        }
+    }
+
+    private void CheckDifficultyIncrease()
+    {
+        // Gradual increase every 5 points
+        if (playerScore > 0 && playerScore % 5 == 0)
+        {
+            int arrayIndex = playerScore / 5;
+            if (arrayIndex >= difficultyTriggered.Length)
+            {
+                Debug.Log($"Score {playerScore} exceeds difficulty array bounds - no further increases.");
+                return;
+            }
+
+            if (!difficultyTriggered[arrayIndex])
+            {
+
+                pipeSpawn.setSpawnRate(Mathf.Max(1.5f, pipeSpawn.getSpawnRate() - 0.05f));
+                pipeMoveScript.setMoveSpeed(Mathf.Min(10f, pipeMoveScript.getMoveSpeed() + 0.3f));
+                coinMoveScript.setMoveSpeed(Mathf.Min(10f, pipeMoveScript.getMoveSpeed() + 0.3f));
+
+
+                difficultyTriggered[playerScore / 5] = true;
+                Debug.Log($"Difficulty increased at score {playerScore}!");
+            }
+        }
+    }
+
+   
 
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;
+        speedIncreaserCount++;
         scoreText.text = playerScore.ToString();
         coins ++;
+        CheckDifficultyIncrease();
         if (playerScore > PlayerPrefs.GetInt("HighScore", 0))
         {
             highScoreText.text = playerScore.ToString();

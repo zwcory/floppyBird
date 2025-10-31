@@ -18,6 +18,13 @@ TagManager:
   - Unstoppable
   - FeelsFresh
   - FilthyRich
+  - RedBird
+  - SpaceBird
+  - Coiny
+  - SpaceBirdPurchase
+  - CoinyPurchase
+  - Pipe
+  - Fish
   layers:
   - Default
   - TransparentFX
