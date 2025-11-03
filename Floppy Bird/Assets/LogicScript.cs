@@ -62,6 +62,10 @@ public class LogicScript : MonoBehaviour
         {
             addScore(5); // Quickly add 5 points to test
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+           Debug.Log($"Pipe speed {pipeMoveScript.getMoveSpeed()}");
+        }
     }
 
     private void CheckDifficultyIncrease()
@@ -79,9 +83,9 @@ public class LogicScript : MonoBehaviour
             if (!difficultyTriggered[arrayIndex])
             {
 
-                pipeSpawn.setSpawnRate(Mathf.Max(1.5f, pipeSpawn.getSpawnRate() - 0.05f));
-                pipeMoveScript.setMoveSpeed(Mathf.Min(10f, pipeMoveScript.getMoveSpeed() + 0.3f));
-                coinMoveScript.setMoveSpeed(Mathf.Min(10f, pipeMoveScript.getMoveSpeed() + 0.3f));
+                pipeSpawn.setSpawnRate(Mathf.Max(1.5f, pipeSpawn.getSpawnRate() - 0.075f));
+                pipeMoveScript.setMoveSpeed(Mathf.Min(10f, pipeMoveScript.getMoveSpeed() + 0.5f));
+                coinMoveScript.setMoveSpeed(Mathf.Min(10f, pipeMoveScript.getMoveSpeed() + 0.5f));
 
 
                 difficultyTriggered[playerScore / 5] = true;
@@ -112,7 +116,9 @@ public class LogicScript : MonoBehaviour
     public void restartGame()
     {
         audioManager.PlaySFX(audioManager.selectClip);
-
+        pipeMoveScript.setMoveSpeed(5f);
+        coinMoveScript.setMoveSpeed(5f);
+        pipeSpawn.setSpawnRate(3f);
         StartCoroutine(levelLoader.LoadSceneByName("MainGame"));
     }
 
@@ -120,6 +126,7 @@ public class LogicScript : MonoBehaviour
     {
         PlayerPrefs.SetFloat("Coins", coins);
         gameOverScene.SetActive(true);
+        
     }
 
     public void addCoin(int coin)

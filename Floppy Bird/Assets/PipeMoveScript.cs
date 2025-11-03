@@ -3,7 +3,7 @@ using UnityEngine;
 public class PipeMoveScript : MonoBehaviour
 {
 
-    private float moveSpeed = 5f;
+    public float moveSpeed = 5f;
     public float deadZone = - 45;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +26,8 @@ public class PipeMoveScript : MonoBehaviour
     public void setMoveSpeed(float speed)
     {
         moveSpeed = speed;
+
+        Debug.Log($"Move speed increased: {speed}");
     }
     public float getMoveSpeed()
     {

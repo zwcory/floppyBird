@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CoinMoveScript : MonoBehaviour
 {
-    private float moveSpeed = 5f;
+    public float moveSpeed = 5f;
     public float deadZone = -45;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
