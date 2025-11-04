@@ -10,6 +10,11 @@ public class SkinManager : MonoBehaviour
     [SerializeField] Sprite redBird, spaceBird;
     [SerializeField] Sprite redWing, spaceWing;
     [SerializeField] Sprite whiteWing, coiny;
+    [SerializeField] Sprite gingerbreadWing, santa;
+    [SerializeField] Sprite conceptWing, concept;
+
+
+
 
     public SkinPurchaser skinPurchaser;
     public int wasModeChanged;
@@ -62,6 +67,26 @@ public class SkinManager : MonoBehaviour
         skinPurchaser.SelectBox("Coiny");
     }
 
+    public void SelectSantaSkin()
+    {
+        PlayerPrefs.SetString("SelectedSkin", "Santa");
+        PlayerPrefs.Save();
+        ApplySavedSkin();
+        audioManager.PlaySFX(audioManager.selectClip);
+        Debug.Log("Selected Santa skin");
+        skinPurchaser.SelectBox("Santa");
+    }
+
+    public void SelectConceptSkin()
+    {
+        PlayerPrefs.SetString("SelectedSkin", "Concept");
+        PlayerPrefs.Save();
+        ApplySavedSkin();
+        audioManager.PlaySFX(audioManager.selectClip);
+        Debug.Log("Selected Concept skin");
+        skinPurchaser.SelectBox("Concept");
+    }
+
     private void ApplySavedSkin()
     {
         string selectedSkin = PlayerPrefs.GetString("SelectedSkin", "RedBird");
@@ -85,6 +110,16 @@ public class SkinManager : MonoBehaviour
             {
                 bird.GetComponent<SpriteRenderer>().sprite = coiny;
                 wing.GetComponent<SpriteRenderer>().sprite = whiteWing;
+            }
+            else if (selectedSkin == "Santa")
+            {
+                bird.GetComponent<SpriteRenderer>().sprite = santa;
+                wing.GetComponent<SpriteRenderer>().sprite = gingerbreadWing;
+            }
+            else if (selectedSkin == "Concept")
+            {
+                bird.GetComponent<SpriteRenderer>().sprite = concept;
+                wing.GetComponent<SpriteRenderer>().sprite = conceptWing;
             }
         }
 

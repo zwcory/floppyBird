@@ -85,7 +85,7 @@ public class LogicScript : MonoBehaviour
 
                 pipeSpawn.setSpawnRate(Mathf.Max(1.5f, pipeSpawn.getSpawnRate() - 0.075f));
                 pipeMoveScript.setMoveSpeed(Mathf.Min(10f, pipeMoveScript.getMoveSpeed() + 0.5f));
-                coinMoveScript.setMoveSpeed(Mathf.Min(10f, pipeMoveScript.getMoveSpeed() + 0.5f));
+                coinMoveScript.setMoveSpeed(Mathf.Min(10f, coinMoveScript.getMoveSpeed() + 0.5f));
 
 
                 difficultyTriggered[playerScore / 5] = true;

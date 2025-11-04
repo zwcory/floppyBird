@@ -10,6 +10,8 @@ public class SkinPurchaser : MonoBehaviour
     public GameObject redBird;
     public GameObject spaceBird;
     public GameObject coiny;
+    public GameObject santa;
+    public GameObject concept;
     public List<Skin> skins;
     //public GameObject ques;
     //public GameObject question;
@@ -32,6 +34,16 @@ public class SkinPurchaser : MonoBehaviour
     public GameObject redBirdSelectButton;
     public GameObject spaceBirdSelectButton;
     public GameObject coinySelectButton;
+    public GameObject santaSelectButton;
+    public GameObject conceptSelectButton;
+
+    [Header("Purchase Buttons")]
+    public GameObject redBirdPurchaseButton;
+    public GameObject spaceBirdPurchaseButton;
+    public GameObject coinyPurchaseButton;
+    public GameObject santaPurchaseButton;
+    public GameObject conceptPurchaseButton;
+
 
 
     public void Awake()
@@ -49,6 +61,8 @@ public class SkinPurchaser : MonoBehaviour
     }
     void Start()
     {
+        PlayerPrefs.SetInt("Santa", 0);
+
         InitializeSkins();
         coins = PlayerPrefs.GetFloat("Coins", 0f);
         UpdatePurchasedSkins();
@@ -144,7 +158,7 @@ public class SkinPurchaser : MonoBehaviour
                         Debug.LogError($"Select button not found for {skin.name}");
                     }
                     // Hide purchase button
-                    purchaseButton = GameObject.FindGameObjectWithTag(skin.name + "Purchase");
+                    purchaseButton = GetPurchaseButton(skin.name);
                     if (purchaseButton != null)
                     {
                         purchaseButton.SetActive(false);
@@ -172,7 +186,16 @@ public class SkinPurchaser : MonoBehaviour
         } else if (skinName == "Coiny")
         {
             skinSelector = coiny;
-        } else
+        }
+        else if (skinName == "Santa")
+        {
+            skinSelector = santa;
+        }
+        else if (skinName == "Concept")
+        {
+            skinSelector = concept;
+        }
+        else
         {
             Debug.Log($"Couldnt find skin {skinName}");
             skinSelector = redBird;
@@ -185,6 +208,20 @@ public class SkinPurchaser : MonoBehaviour
             case "RedBird": return redBirdSelectButton;
             case "SpaceBird": return spaceBirdSelectButton;
             case "Coiny": return coinySelectButton;
+            case "Santa": return santaSelectButton;
+            case "Concept": return conceptSelectButton;
+            default: return null;
+        }
+    }
+
+    private GameObject GetPurchaseButton(string skinName)
+    {
+        switch (skinName)
+        {
+            case "SpaceBird": return spaceBirdPurchaseButton;
+            case "Coiny": return coinyPurchaseButton;
+            case "Santa": return santaPurchaseButton;
+            case "Concept": return conceptPurchaseButton;
             default: return null;
         }
     }
@@ -228,7 +265,9 @@ public class SkinPurchaser : MonoBehaviour
         skins = new List<Skin>();
         skins.Add(new Skin("RedBird", true, true, 0));
         skins.Add(new Skin("SpaceBird", false, false, 200));
-        skins.Add(new Skin("Coiny", false, false, 2000));
+        skins.Add(new Skin("Coiny", false, false, 2000)); // change cost
+        skins.Add(new Skin("Concept", false, false, 500));
+        skins.Add(new Skin("Santa", false, false, 1000));
     }
 }
 

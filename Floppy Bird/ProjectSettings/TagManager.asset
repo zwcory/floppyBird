@@ -26,6 +26,9 @@ TagManager:
   - Pipe
   - Fish
   - Santa
+  - SantaPurchase
+  - Concept
+  - ConceptPurchase
   layers:
   - Default
   - TransparentFX

@@ -5097,6 +5097,10 @@ MonoBehaviour:
   spaceWing: {fileID: 3604035845478683098, guid: 4f301bdee13fe27489045d234d2d1805, type: 3}
   whiteWing: {fileID: -1283736898251759576, guid: 55d6d95de040e0e45b3504dd3a7096e1, type: 3}
   coiny: {fileID: 1088196458374472331, guid: b82ac83660604154d9a3f132db65dd1d, type: 3}
+  gingerbreadWing: {fileID: 1940028132238681227, guid: 842e4117424a8b74a9a7aa8208f8cb6a, type: 3}
+  santa: {fileID: 4242309475464582328, guid: b0057b19181f517469cc00ce2cc65852, type: 3}
+  conceptWing: {fileID: -2944748203520345096, guid: 3dd51d4f2e2ad5446bebcd59ef77b170, type: 3}
+  concept: {fileID: -2867121755338422753, guid: 816f3778d1b65d34cac384b480277e75, type: 3}
   skinPurchaser: {fileID: 0}
   wasModeChanged: 0
   achievementManager: {fileID: 0}
@@ -6341,7 +6345,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3803887304354961441, guid: c2d5ece3efe96a641b270be36a0697f9, type: 3}
+  m_Sprite: {fileID: -2867121755338422753, guid: 816f3778d1b65d34cac384b480277e75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11833,7 +11837,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7297196468488472043, guid: 744c2ecf668597e459f2b3cf682c23da, type: 3}
+  m_Sprite: {fileID: -2944748203520345096, guid: 3dd51d4f2e2ad5446bebcd59ef77b170, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
