@@ -25,6 +25,7 @@ TagManager:
   - CoinyPurchase
   - Pipe
   - Fish
+  - Santa
   layers:
   - Default
   - TransparentFX

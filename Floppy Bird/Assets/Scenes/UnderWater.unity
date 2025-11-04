@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 118177694}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -1179.5, y: -573.7, z: 10}
+  m_LocalPosition: {x: -1179.5, y: -573.7, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 7.17}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5550,7 +5550,7 @@ GameObject:
   - component: {fileID: 254641318}
   - component: {fileID: 254641317}
   m_Layer: 0
-  m_Name: Particle Manager (1)
+  m_Name: BublleGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5577,7 +5577,7 @@ Transform:
   m_GameObject: {fileID: 254641316}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1196.157, y: 551.573, z: 0}
+  m_LocalPosition: {x: 1196.157, y: 551.573, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5934,7 +5934,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.05962975, g: 0.11619938, b: 0.18867922, a: 0}
+  m_BackGroundColor: {r: 0.058823533, g: 0.11764707, b: 0.18823531, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -11780,7 +11780,7 @@ Transform:
   m_GameObject: {fileID: 1481478854}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.11, y: -0.5, z: 0}
+  m_LocalPosition: {x: -2.11, y: -0.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
