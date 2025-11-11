@@ -63,7 +63,7 @@ public class TitleLogic : MonoBehaviour
     public void startGame()
     {
         audioManager.PlaySFX(audioManager.selectClip);
-        StartCoroutine(levelLoader.LoadSceneByName("MainGame"));
+        StartCoroutine(levelLoader.LoadSceneByName("Christmas"));
     }
 
     public void loadMenu()

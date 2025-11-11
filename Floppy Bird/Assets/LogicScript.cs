@@ -45,7 +45,6 @@ public class LogicScript : MonoBehaviour
 
         coins = PlayerPrefs.GetFloat("Coins", 0f);
         totalCoins = PlayerPrefs.GetFloat("TotalCoins", 0f);
-        Debug.Log($"total coins in logic {totalCoins}");
         plays = PlayerPrefs.GetInt("Plays" , 0);
         totalPoints += PlayerPrefs.GetInt("TotalPoints", 0);
         highScore += PlayerPrefs.GetInt("HighScore", 0);

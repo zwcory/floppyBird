@@ -17,4 +17,9 @@ public class ParticleManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void DestroyParticleManager()
+    {
+        Destroy(gameObject);
+    }
 }

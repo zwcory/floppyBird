@@ -29,6 +29,7 @@ TagManager:
   - SantaPurchase
   - Concept
   - ConceptPurchase
+  - ParticleManager
   layers:
   - Default
   - TransparentFX
