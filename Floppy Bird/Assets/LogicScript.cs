@@ -42,8 +42,10 @@ public class LogicScript : MonoBehaviour
     }
     public void Start()
     {
+
         coins = PlayerPrefs.GetFloat("Coins", 0f);
         totalCoins = PlayerPrefs.GetFloat("TotalCoins", 0f);
+        Debug.Log($"total coins in logic {totalCoins}");
         plays = PlayerPrefs.GetInt("Plays" , 0);
         totalPoints += PlayerPrefs.GetInt("TotalPoints", 0);
         highScore += PlayerPrefs.GetInt("HighScore", 0);
@@ -100,9 +102,11 @@ public class LogicScript : MonoBehaviour
     public void addScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;
+        totalPoints += scoreToAdd;
         speedIncreaserCount++;
         scoreText.text = playerScore.ToString();
         coins ++;
+        totalCoins ++;
         CheckDifficultyIncrease();
         if (playerScore > PlayerPrefs.GetInt("HighScore", 0))
         {
@@ -116,25 +120,29 @@ public class LogicScript : MonoBehaviour
     public void restartGame()
     {
         audioManager.PlaySFX(audioManager.selectClip);
-        pipeMoveScript.setMoveSpeed(5f);
-        coinMoveScript.setMoveSpeed(5f);
         pipeSpawn.setSpawnRate(3f);
         StartCoroutine(levelLoader.LoadSceneByName("MainGame"));
     }
 
     public void gameOver()
     {
+        plays++;
+        pipeMoveScript.setMoveSpeed(5f);
+        coinMoveScript.setMoveSpeed(5f);
         PlayerPrefs.SetFloat("Coins", coins);
+        PlayerPrefs.SetFloat("TotalCoins", totalCoins);
+        PlayerPrefs.SetInt("TotalPoints", totalPoints);
+        PlayerPrefs.SetInt("Plays", plays);
         gameOverScene.SetActive(true);
-        
+        PlayerPrefs.Save();
+
     }
 
     public void addCoin(int coin)
     {
         coins += coin;
         totalCoins += coin;
-        PlayerPrefs.SetFloat("Coins", coins);
-        PlayerPrefs.SetFloat("TotalCoins", totalCoins);
+        
     }
 
 }

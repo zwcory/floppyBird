@@ -38,34 +38,17 @@ public class SkinPurchaser : MonoBehaviour
     public GameObject conceptSelectButton;
 
     [Header("Purchase Buttons")]
-    public GameObject redBirdPurchaseButton;
     public GameObject spaceBirdPurchaseButton;
     public GameObject coinyPurchaseButton;
     public GameObject santaPurchaseButton;
     public GameObject conceptPurchaseButton;
 
-
-
-    public void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
     void Start()
     {
-        PlayerPrefs.SetInt("Santa", 0);
-
         InitializeSkins();
         coins = PlayerPrefs.GetFloat("Coins", 0f);
         UpdatePurchasedSkins();
+
         
     }
 
@@ -96,6 +79,7 @@ public class SkinPurchaser : MonoBehaviour
         if (coins < skin.price)
         {
             Debug.Log("Not enough coins to purchase this skin!");
+            // TODO
             // Play failure sound here
             return;
         }
@@ -233,27 +217,33 @@ public class SkinPurchaser : MonoBehaviour
             Debug.Log("--------- Skins have not been initialized! ---------------");
             return; 
         }
-            foreach (var skin in skins)
+        foreach (var skin in skins)
+        {
+            SetSkinSelector(skin.name);
+            if (skin.purchased == true)
             {
-                SetSkinSelector(skin.name);
-                if (skin.purchased == true)
+                checkboxUpdater = skinSelector.GetComponentInChildren<CheckboxUpdater>();
+                colourChanger = skinSelector.GetComponentInChildren<ColourChanger>();
+
+
+                if (skin.name == skinName)
                 {
-                    checkboxUpdater = skinSelector.GetComponentInChildren<CheckboxUpdater>();
-                    colourChanger = skinSelector.GetComponentInChildren<ColourChanger>();
-                    if (skin.name == skinName)
-                    {
-                        // UpdateBox() method changes checbox to selected, see method for reason of not refactoring.
-                        checkboxUpdater.UpdateBox();
-                        // ChangeColour() method changes text to white, see method for reason of not refactoring.
-                        colourChanger.ChangeColour();
-                    }
-                    else
-                    {
-                        checkboxUpdater.UncheckBox();
-                        colourChanger.SetUnselectedColour();
-                    }
+                Debug.Log($"Inside select box, skin.name is {skin.name}");
+                Debug.Log($"Inside select box, skinName is {skinName}");
+                    
+                Debug.Log($"Inside select box,checkbox updater: {checkboxUpdater}, colour changer: {colourChanger}");
+                // UpdateBox() method changes checbox to selected, see method for reason of not refactoring.
+                checkboxUpdater.UpdateBox();
+                    // ChangeColour() method changes text to white, see method for reason of not refactoring.
+                    colourChanger.ChangeColour();
+                }
+                else
+                {
+                    checkboxUpdater.UncheckBox();
+                    colourChanger.SetUnselectedColour();
                 }
             }
+        }
     }
 
     public void InitializeSkins()

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PipeSpawnerScript : MonoBehaviour
 {
+    // Kept public because setSpawnRate doesnt work when spawnRate is set to private (??)
+
     public GameObject pipe;
     public float spawnRate = 3f;
     private float timer = 0;

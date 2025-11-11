@@ -96,7 +96,7 @@ public class AchievementManager : MonoBehaviour
         achievements.Add(new Achievement("HighFlyer", "Get a high score of 50", "none", 500, (object o) => logic.highScore >= 50));
         achievements.Add(new Achievement("Unstoppable", "Get a high score of 200", "none", 10000, (object o) => logic.highScore >= 200));
         achievements.Add(new Achievement("FeelsFresh", "Change the mode", "none", 500, (object o) => skinManager.wasModeChanged >= 1));
-        achievements.Add(new Achievement("FilthyRich", "Earn a total of 20k coins", "coin", 0, (object o) => logic.totalCoins >= 20000));
+        achievements.Add(new Achievement("FilthyRich", "Earn a total of 20k coins", "Coiny", 0, (object o) => logic.totalCoins >= 20000));
 
         foreach (var achievement in achievements)
         {
@@ -164,6 +164,10 @@ public class Achievement
             achieved = true;
             logic.addCoin( coinReward );
             PlayerPrefs.SetInt(title, 1);
+            if (itemReward == "Coiny")
+            {
+                PlayerPrefs.SetInt("Coiny", 1);
+            }
         }
     }
 

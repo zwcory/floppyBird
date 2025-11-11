@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PipeMoveScript : MonoBehaviour
 {
-
+    // Kept public because setMoveSpeed doesnt work when moveSpeed is set to private (??)
     public float moveSpeed = 5f;
     public float deadZone = - 45;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
