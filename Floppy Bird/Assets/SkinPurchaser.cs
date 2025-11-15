@@ -255,7 +255,7 @@ public class SkinPurchaser : MonoBehaviour
         skins = new List<Skin>();
         skins.Add(new Skin("RedBird", true, true, 0));
         skins.Add(new Skin("SpaceBird", false, false, 200));
-        skins.Add(new Skin("Coiny", false, false, 2000)); // change cost
+        skins.Add(new Skin("Coiny", false, false, 0)); // change cost
         skins.Add(new Skin("Concept", false, false, 500));
         skins.Add(new Skin("Santa", false, false, 1000));
     }

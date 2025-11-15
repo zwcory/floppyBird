@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: decb7d1644678744c9b55fe968eb1031
+guid: 2f2b74bc5cd8678498cd627b7c740c5c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4913853223156159750
-    second: CoinyIcon_0
-  - first:
-      213: -5389289923727705635
-    second: CoinyIcon_1
+      213: 8135734187854826643
+    second: santaNew_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CoinyIcon_2
+      name: santaNew_0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 66
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 6
+        y: 10
+        width: 546
+        height: 481
+      alignment: 9
+      pivot: {x: 100000, y: 0.5376041}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 97531672ae4b36048857d32412a5be3e
-      internalID: 648885806
+      spriteID: 39c861e832fe7e070800000000000000
+      internalID: 8135734187854826643
       vertices: []
       indices: 
       edges: []
@@ -128,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0736035ec0ac4b140a0f0b78967a13a2
+    spriteID: 6da5093ec0c24df45acf1758fe5b62b3
     internalID: 0
     vertices: []
     indices: 
@@ -138,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CoinyIcon_0: -4913853223156159750
-      CoinyIcon_1: -5389289923727705635
-      CoinyIcon_2: 648885806
+      santaNew_0: 8135734187854826643
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
