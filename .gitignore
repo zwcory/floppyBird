@@ -56,10 +56,13 @@ consulo/
 sysinfo.txt
 
 # Builds
-*.apk
-*.aab
-*.unitypackage
-*.app
+#*.apk
+#*.aab
+#*.unitypackage
+#*.app
+Build/Windows/FloppyBird_BurstDebugInformation_DoNotShip
+Build/Mac/FloppyBird_BurstDebugInformation_DoNotShip
+Build/FloppyBird_BurstDebugInformation_DoNotShip
 
 # Crashlytics generated file
 crashlytics-build.properties
