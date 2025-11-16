@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Logic
+  - Bird
+  - FirstPoint
+  - Wing
+  - AudioManager
+  - AchievementManager
+  - HappyFlappy
+  - 50Up
+  - SkinManager
+  - CrashCourse
+  - HighFlyer
+  - Unstoppable
+  - FeelsFresh
+  - FilthyRich
+  - RedBird
+  - SpaceBird
+  - Coiny
+  - SpaceBirdPurchase
+  - CoinyPurchase
+  - Pipe
+  - Fish
+  - Santa
+  - SantaPurchase
+  - Concept
+  - ConceptPurchase
+  - ParticleManager
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Bird
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  m_RenderingLayers:
+  - Default
