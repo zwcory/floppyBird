@@ -67,6 +67,7 @@ public class AchievementManager : MonoBehaviour
 
     public void PatchLogic()
     {
+        Debug.Log("Patched Logic");
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
 
     }
@@ -82,10 +83,12 @@ public class AchievementManager : MonoBehaviour
         //if ((logic == null) || (skinManager == null))
         if (logic == null)
         {
+            Debug.Log("Logic is null");
             return;
         }
         if (achievements != null)
         {
+            Debug.Log("acheivements already created");
             return;
         }
         achievements = new List<Achievement>();
@@ -100,6 +103,7 @@ public class AchievementManager : MonoBehaviour
 
         foreach (var achievement in achievements)
         {
+            Debug.Log(achievement.title);
             int wasAchieved = PlayerPrefs.GetInt(achievement.title, 0);
             if (wasAchieved > 0)
             {

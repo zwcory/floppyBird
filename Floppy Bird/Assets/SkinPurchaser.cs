@@ -43,6 +43,17 @@ public class SkinPurchaser : MonoBehaviour
     public GameObject santaPurchaseButton;
     public GameObject conceptPurchaseButton;
 
+
+    AudioManager audioManager;
+
+
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
+
+
     void Start()
     {
         InitializeSkins();
@@ -78,6 +89,7 @@ public class SkinPurchaser : MonoBehaviour
 
         if (coins < skin.price)
         {
+            audioManager.PlaySFX(audioManager.unsuccesfulPurchaseClip);
             Debug.Log("Not enough coins to purchase this skin!");
             // TODO
             // Play failure sound here
@@ -87,6 +99,7 @@ public class SkinPurchaser : MonoBehaviour
         // Deduct coins and mark as purchased
         coins -= skin.price;
         skin.purchased = true;
+        audioManager.PlaySFX(audioManager.purchaseClip);
         PlayerPrefs.SetInt(skin.name, 1);
         PlayerPrefs.SetFloat("Coins", coins);
         PlayerPrefs.Save();
@@ -103,7 +116,6 @@ public class SkinPurchaser : MonoBehaviour
         if (selectButton != null)
         {
             selectButton.SetActive(true);  // This activates the parent GameObject
-            Debug.Log($"Select button activated for: {skin.name}");
         }
         else
         {
@@ -114,7 +126,6 @@ public class SkinPurchaser : MonoBehaviour
         coinsTextCustomize.text = coins.ToString();
 
         // Play purchase success sound
-        Debug.Log($"Purchased skin: {skinName}");
     }
 
     public void UpdatePurchasedSkins()
@@ -124,7 +135,6 @@ public class SkinPurchaser : MonoBehaviour
             foreach (var skin in skins)
             {
                 SetSkinSelector(skin.name);
-                Debug.Log(skinSelector);
                 int skinPurchased = PlayerPrefs.GetInt(skin.name, 0);
                 if (skinPurchased == 1)
                 {
@@ -135,7 +145,6 @@ public class SkinPurchaser : MonoBehaviour
                     if (selectButton != null)
                     {
                         selectButton.SetActive(true);  // This activates the parent GameObject
-                        Debug.Log($"Select button activated for: {skin.name}");
                     }
                     else
                     {
@@ -148,7 +157,6 @@ public class SkinPurchaser : MonoBehaviour
                         purchaseButton.SetActive(false);
                     }
 
-                    Debug.Log($"purchase button for {skin.name} active? {purchaseButton.activeInHierarchy} ");
 
                 }
             }
@@ -228,10 +236,7 @@ public class SkinPurchaser : MonoBehaviour
 
                 if (skin.name == skinName)
                 {
-                Debug.Log($"Inside select box, skin.name is {skin.name}");
-                Debug.Log($"Inside select box, skinName is {skinName}");
                     
-                Debug.Log($"Inside select box,checkbox updater: {checkboxUpdater}, colour changer: {colourChanger}");
                 // UpdateBox() method changes checbox to selected, see method for reason of not refactoring.
                 checkboxUpdater.UpdateBox();
                     // ChangeColour() method changes text to white, see method for reason of not refactoring.
@@ -255,7 +260,7 @@ public class SkinPurchaser : MonoBehaviour
         skins = new List<Skin>();
         skins.Add(new Skin("RedBird", true, true, 0));
         skins.Add(new Skin("SpaceBird", false, false, 200));
-        skins.Add(new Skin("Coiny", false, false, 0)); // change cost
+        skins.Add(new Skin("Coiny", false, false, 0));
         skins.Add(new Skin("Concept", false, false, 500));
         skins.Add(new Skin("Santa", false, false, 1000));
     }

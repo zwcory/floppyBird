@@ -10,13 +10,21 @@ public class MenuManager : MonoBehaviour
     public CheckboxUpdater checkboxUpdater;
     private void Start()
     {
+
         // find achievements that have been instantiated
+        StartCoroutine(DelayedAchievements());
+    }
+
+    private System.Collections.IEnumerator DelayedAchievements()
+    {
+        yield return null; // Wait one frame
+
         var achievements = AchievementManager.instance.achievements;
         foreach (var achievement in achievements)
         {
 
             textHolder = GameObject.FindGameObjectWithTag(achievement.title);
-            
+
 
             if (achievement.achieved)
             {
@@ -27,19 +35,14 @@ public class MenuManager : MonoBehaviour
 
                     foreach (var text in colourChanger)
                     {
-                        Debug.Log($" colourChanger: {text}");
                         text.ChangeColour();
                     }
 
                     checkboxUpdater.UpdateBox();
                 }
             }
-            
-        }
-    }
 
-    void Update()
-    {
-        
+        }
+
     }
 }

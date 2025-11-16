@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 public class TitleLogic : MonoBehaviour
@@ -16,11 +17,11 @@ public class TitleLogic : MonoBehaviour
     public TextMeshProUGUI coinsTextMenu;
     public TextMeshProUGUI coinsTextCustomize;
     private string coinsText;
-
+    public string mode;
     public void Start()
     {
         coins = PlayerPrefs.GetFloat("Coins", 0);
-        
+        mode = PlayerPrefs.GetString("SelectedMode", "Default");
     }
     private void Update()
     {
@@ -55,6 +56,12 @@ public class TitleLogic : MonoBehaviour
         if (coinsTextCustomize != null) coinsTextCustomize.text = formattedCoinsF0;
     }
 
+    public void updateSelectedMode(string selectedMode)
+    {
+        mode = selectedMode;
+
+    }
+
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
@@ -63,7 +70,7 @@ public class TitleLogic : MonoBehaviour
     public void startGame()
     {
         audioManager.PlaySFX(audioManager.selectClip);
-        StartCoroutine(levelLoader.LoadSceneByName("Christmas"));
+        StartCoroutine(levelLoader.LoadSceneByName(mode));
     }
 
     public void loadMenu()

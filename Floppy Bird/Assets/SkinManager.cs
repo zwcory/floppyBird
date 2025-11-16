@@ -1,4 +1,5 @@
 using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SkinManager : MonoBehaviour
@@ -17,6 +18,8 @@ public class SkinManager : MonoBehaviour
 
 
     public SkinPurchaser skinPurchaser;
+    public ModePurchaser modePurchaser;
+    public TitleLogic titleLogic;
     public int wasModeChanged;
     public AchievementManager achievementManager;
 
@@ -31,6 +34,7 @@ public class SkinManager : MonoBehaviour
     {
         wasModeChanged = PlayerPrefs.GetInt("WasModeChanged", 0);
         ApplySavedSkin();
+        ApplySavedMode();
         achievementManager = GameObject.FindGameObjectWithTag("AchievementManager").GetComponent<AchievementManager>();
         achievementManager.PatchSkinManager();
     }
@@ -87,6 +91,58 @@ public class SkinManager : MonoBehaviour
         skinPurchaser.SelectBox("Concept");
     }
 
+    public void SelectDefaultMode()
+    {
+        
+        PlayerPrefs.SetString("SelectedMode", "Default");
+        PlayerPrefs.Save();
+        ApplySavedMode();
+        audioManager.PlaySFX(audioManager.selectClip);
+        Debug.Log("Selected Default mode");
+        modePurchaser.SelectBox("Default");
+    }
+    public void SelectChristmasMode()
+    {
+        wasModeChanged = 1;
+        PlayerPrefs.SetInt("WasModeChanged", 1);
+        PlayerPrefs.SetString("SelectedMode", "Christmas");
+        PlayerPrefs.Save();
+        ApplySavedMode();
+        audioManager.PlaySFX(audioManager.selectClip);
+        Debug.Log("Selected Christmas mode");
+        modePurchaser.SelectBox("Christmas");
+    }
+    public void SelectUnderWaterMode()
+    {
+        wasModeChanged = 1;
+        PlayerPrefs.SetInt("WasModeChanged", 1);
+        PlayerPrefs.SetString("SelectedMode", "Underwater");
+        PlayerPrefs.Save();
+        ApplySavedMode();
+        audioManager.PlaySFX(audioManager.selectClip);
+        Debug.Log("Selected Underwater mode");
+        modePurchaser.SelectBox("Underwater");
+    }
+
+    private void ApplySavedMode()
+    {
+        string selectedMode = PlayerPrefs.GetString("SelectedMode", "Default");
+        if (titleLogic != null)
+        {
+            titleLogic.updateSelectedMode(selectedMode);
+        }
+        if (modePurchaser != null && modePurchaser.modes != null)
+        {
+            modePurchaser.SelectBox(selectedMode);
+        }
+        else
+        {
+            // Delay the SelectBox call until the next frame
+            StartCoroutine(DelayedModeSelect(selectedMode));
+        }
+
+    }
+
     private void ApplySavedSkin()
     {
         string selectedSkin = PlayerPrefs.GetString("SelectedSkin", "RedBird");
@@ -134,6 +190,21 @@ public class SkinManager : MonoBehaviour
         {
             // Delay the SelectBox call until the next frame
             StartCoroutine(DelayedSelectBox(selectedSkin));
+        }
+    }
+
+    private System.Collections.IEnumerator DelayedModeSelect(string selectedMode)
+    {
+        yield return null; // Wait one frame
+
+        // Try again after initialization should be complete
+        if (modePurchaser != null && modePurchaser.modes != null)
+        {
+            modePurchaser.SelectBox(selectedMode);
+        }
+        else
+        {
+            Debug.LogWarning("ModePurchaser still not initialized after delay");
         }
     }
 

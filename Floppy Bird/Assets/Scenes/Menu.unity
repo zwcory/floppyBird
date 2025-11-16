@@ -1461,6 +1461,8 @@ MonoBehaviour:
   conceptWing: {fileID: -2944748203520345096, guid: 3dd51d4f2e2ad5446bebcd59ef77b170, type: 3}
   concept: {fileID: -2867121755338422753, guid: 816f3778d1b65d34cac384b480277e75, type: 3}
   skinPurchaser: {fileID: 62680393}
+  modePurchaser: {fileID: 62680394}
+  titleLogic: {fileID: 1890744715}
   wasModeChanged: 0
   achievementManager: {fileID: 0}
 --- !u!4 &62680392
@@ -1527,8 +1529,8 @@ MonoBehaviour:
   checkboxUpdater: {fileID: 0}
   colourChanger: {fileID: 0}
   coins: 0
-  coinsTextMenu: {fileID: 0}
-  coinsTextCustomize: {fileID: 0}
+  coinsTextMenu: {fileID: 143354257}
+  coinsTextCustomize: {fileID: 1011056709}
   modeSelector: {fileID: 0}
   defaultSelectButton: {fileID: 2115441438}
   christmasSelectButton: {fileID: 487876065}
@@ -4760,6 +4762,8 @@ MonoBehaviour:
   swipeClip: {fileID: 8300000, guid: 6f41c22b021b78544a1b16c264e1039c, type: 3}
   failClip: {fileID: 8300000, guid: 5f56df79929432e47ba2947220bf888c, type: 3}
   selectClip: {fileID: 8300000, guid: 581737d4437231f41b402c48e87b0a43, type: 3}
+  purchaseClip: {fileID: 8300000, guid: dd6a6643940cb0144b8eef5a95d5d124, type: 3}
+  unsuccesfulPurchaseClip: {fileID: 8300000, guid: 405f0037ef41ae74d8df705c164cd619, type: 3}
   isPlayingChristmas: 0
 --- !u!4 &330426457
 Transform:
@@ -4944,7 +4948,7 @@ GameObject:
   - component: {fileID: 350639725}
   m_Layer: 5
   m_Name: Purchase
-  m_TagString: SpaceBirdPurchase
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5014,7 +5018,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 350639726}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 62680394}
+        m_TargetAssemblyTypeName: ModePurchaser, Assembly-CSharp
+        m_MethodName: PurchaseMode
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Underwater
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &350639726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6603,7 +6619,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 487876068}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 62680391}
+        m_TargetAssemblyTypeName: SkinManager, Assembly-CSharp
+        m_MethodName: SelectChristmasMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &487876068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11987,7 +12015,7 @@ GameObject:
   - component: {fileID: 535514472}
   m_Layer: 5
   m_Name: Purchase
-  m_TagString: SpaceBirdPurchase
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12057,7 +12085,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 535514473}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 62680394}
+        m_TargetAssemblyTypeName: ModePurchaser, Assembly-CSharp
+        m_MethodName: PurchaseMode
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Christmas
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &535514473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13575,7 +13615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5038371321377652464, guid: ac60ca88779af524593eb4bea0e7f7b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8050420245823761057, guid: ac60ca88779af524593eb4bea0e7f7b9, type: 3}
       propertyPath: m_IsActive
@@ -18842,7 +18882,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 10
     m_Bottom: 0
   m_ChildAlignment: 1
   m_Spacing: 120
@@ -20603,6 +20643,7 @@ MonoBehaviour:
   pipeSpawn: {fileID: 0}
   pipeMoveScript: {fileID: 0}
   coinMoveScript: {fileID: 0}
+  mode: 
 --- !u!4 &1372684263
 Transform:
   m_ObjectHideFlags: 0
@@ -20635,12 +20676,14 @@ MonoBehaviour:
   redWing: {fileID: -7297196468488472043, guid: 744c2ecf668597e459f2b3cf682c23da, type: 3}
   spaceWing: {fileID: 3604035845478683098, guid: 4f301bdee13fe27489045d234d2d1805, type: 3}
   whiteWing: {fileID: -1283736898251759576, guid: 55d6d95de040e0e45b3504dd3a7096e1, type: 3}
-  coiny: {fileID: 0}
-  gingerbreadWing: {fileID: 0}
-  santa: {fileID: 0}
-  conceptWing: {fileID: 0}
-  concept: {fileID: 0}
+  coiny: {fileID: 1088196458374472331, guid: b82ac83660604154d9a3f132db65dd1d, type: 3}
+  gingerbreadWing: {fileID: 1940028132238681227, guid: 842e4117424a8b74a9a7aa8208f8cb6a, type: 3}
+  santa: {fileID: 8135734187854826643, guid: 2f2b74bc5cd8678498cd627b7c740c5c, type: 3}
+  conceptWing: {fileID: -2944748203520345096, guid: 3dd51d4f2e2ad5446bebcd59ef77b170, type: 3}
+  concept: {fileID: -2867121755338422753, guid: 816f3778d1b65d34cac384b480277e75, type: 3}
   skinPurchaser: {fileID: 62680393}
+  modePurchaser: {fileID: 62680394}
+  titleLogic: {fileID: 1890744715}
   wasModeChanged: 0
   achievementManager: {fileID: 0}
 --- !u!1 &1386957144
@@ -24103,7 +24146,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1749137905}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 62680391}
+        m_TargetAssemblyTypeName: SkinManager, Assembly-CSharp
+        m_MethodName: SelectUnderWaterMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1749137905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25898,6 +25953,7 @@ MonoBehaviour:
   customization: {fileID: 1222310691}
   coinsTextMenu: {fileID: 143354257}
   coinsTextCustomize: {fileID: 1011056709}
+  mode: 
 --- !u!1 &1899108474
 GameObject:
   m_ObjectHideFlags: 0
@@ -27923,7 +27979,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2115441441}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 62680391}
+        m_TargetAssemblyTypeName: SkinManager, Assembly-CSharp
+        m_MethodName: SelectDefaultMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2115441441
 MonoBehaviour:
   m_ObjectHideFlags: 0

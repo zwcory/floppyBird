@@ -31,11 +31,20 @@ public class ModePurchaser : MonoBehaviour
     public GameObject underWaterMode;
 
 
-    
 
+
+    AudioManager audioManager;
+
+
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
 
     void Start()
     {
+
         InitializeModes();
         coins = PlayerPrefs.GetFloat("Coins", 0f);
         UpdatePurchasedModes();
@@ -69,6 +78,8 @@ public class ModePurchaser : MonoBehaviour
 
         if (coins < mode.price)
         {
+            audioManager.PlaySFX(audioManager.unsuccesfulPurchaseClip);
+
             Debug.Log("Not enough coins to purchase this skin!");
             // TODO
             // Play failure sound here
@@ -78,6 +89,7 @@ public class ModePurchaser : MonoBehaviour
         // Deduct coins and mark as purchased
         coins -= mode.price;
         mode.purchased = true;
+        audioManager.PlaySFX(audioManager.purchaseClip);
         PlayerPrefs.SetInt(mode.name, 1);
         PlayerPrefs.SetFloat("Coins", coins);
         PlayerPrefs.Save();
@@ -105,7 +117,6 @@ public class ModePurchaser : MonoBehaviour
         coinsTextCustomize.text = coins.ToString();
 
         // Play purchase success sound
-        Debug.Log($"Purchased mode: {modeName}");
     }
 
     public void UpdatePurchasedModes()
@@ -124,7 +135,6 @@ public class ModePurchaser : MonoBehaviour
                     if (selectButton != null)
                     {
                         selectButton.SetActive(true);  // This activates the parent GameObject
-                        Debug.Log($"Select button activated for: {mode.name}");
                     }
                     else
                     {
@@ -137,14 +147,13 @@ public class ModePurchaser : MonoBehaviour
                         purchaseButton.SetActive(false);
                     }
 
-                    Debug.Log($"purchase button for {mode.name} active? {purchaseButton.activeInHierarchy} ");
 
                 }
             }
         }
         if (modes == null)
         {
-            Debug.Log("--------- Skins have not been initialized! ---------------");
+            Debug.Log("--------- Modes have not been initialized! ---------------");
         }
     }
 
@@ -167,8 +176,8 @@ public class ModePurchaser : MonoBehaviour
     {
         switch (modeName)
         {
-            case "Christmas": return christmasSelectButton;
-            case "Underwater": return underwaterSelectButton;
+            case "Christmas": return christmasPurchaseButton;
+            case "Underwater": return underwaterPurchaseButton;
             default:
                 {
                     Debug.Log($"Couldn't find purchase button for mode: {modeName}");
@@ -186,7 +195,7 @@ public class ModePurchaser : MonoBehaviour
                     modeSelector = defaultMode;
                     return;
                 }
-            case "Chistmas":
+            case "Christmas":
                 {
                     modeSelector = christmasMode;
                     return;
@@ -223,10 +232,6 @@ public class ModePurchaser : MonoBehaviour
 
                 if (mode.name == modeName)
                 {
-                    Debug.Log($"Inside select box, mode.name is {mode.name}");
-                    Debug.Log($"Inside select box, modeName is {modeName}");
-
-                    Debug.Log($"Inside select box,checkbox updater: {checkboxUpdater}, colour changer: {colourChanger}");
                     // UpdateBox() method changes checbox to selected, see method for reason of not refactoring.
                     checkboxUpdater.UpdateBox();
                     // ChangeColour() method changes text to white, see method for reason of not refactoring.

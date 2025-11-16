@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SceneManagement;
+using System;
 
 public class LogicScript : MonoBehaviour
 {
@@ -26,7 +28,7 @@ public class LogicScript : MonoBehaviour
     public CoinMoveScript coinMoveScript;
 
 
-
+    public string mode;
 
 
     AudioManager audioManager;
@@ -39,10 +41,16 @@ public class LogicScript : MonoBehaviour
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+
     }
     public void Start()
     {
-
+        mode = SceneManager.GetActiveScene().name;
+        if (pipeMoveScript != null)
+        {
+            pipeMoveScript.setMoveSpeed(5f);
+            coinMoveScript.setMoveSpeed(5f);
+        }
         coins = PlayerPrefs.GetFloat("Coins", 0f);
         totalCoins = PlayerPrefs.GetFloat("TotalCoins", 0f);
         plays = PlayerPrefs.GetInt("Plays" , 0);
@@ -120,14 +128,12 @@ public class LogicScript : MonoBehaviour
     {
         audioManager.PlaySFX(audioManager.selectClip);
         pipeSpawn.setSpawnRate(3f);
-        StartCoroutine(levelLoader.LoadSceneByName("MainGame"));
+        StartCoroutine(levelLoader.LoadSceneByName(mode));
     }
 
     public void gameOver()
     {
         plays++;
-        pipeMoveScript.setMoveSpeed(5f);
-        coinMoveScript.setMoveSpeed(5f);
         PlayerPrefs.SetFloat("Coins", coins);
         PlayerPrefs.SetFloat("TotalCoins", totalCoins);
         PlayerPrefs.SetInt("TotalPoints", totalPoints);

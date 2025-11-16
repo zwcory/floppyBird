@@ -208,8 +208,9 @@ MonoBehaviour:
   speedIncreaserCount: 0
   achievementManager: {fileID: 0}
   pipeSpawn: {fileID: 987392904}
-  pipeMoveScript: {fileID: 347187338955318320, guid: da178a59b468e4e4e8890d950a8b4402, type: 3}
+  pipeMoveScript: {fileID: 347187338955318320, guid: 7005c66d431a79546ae858ce93ba380e, type: 3}
   coinMoveScript: {fileID: 3883822164776818924, guid: 3962be72130ab1341b8df8a56a1e5454, type: 3}
+  mode: 
 --- !u!4 &138255513
 Transform:
   m_ObjectHideFlags: 0
@@ -243,6 +244,7 @@ MonoBehaviour:
   customization: {fileID: 0}
   coinsTextMenu: {fileID: 0}
   coinsTextCustomize: {fileID: 0}
+  mode: 
 --- !u!114 &138255515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +268,8 @@ MonoBehaviour:
   conceptWing: {fileID: -2944748203520345096, guid: 3dd51d4f2e2ad5446bebcd59ef77b170, type: 3}
   concept: {fileID: -2867121755338422753, guid: 816f3778d1b65d34cac384b480277e75, type: 3}
   skinPurchaser: {fileID: 0}
+  modePurchaser: {fileID: 0}
+  titleLogic: {fileID: 0}
   wasModeChanged: 0
   achievementManager: {fileID: 0}
 --- !u!1 &193913164
@@ -714,51 +718,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260823149}
   m_CullTransparentMesh: 1
---- !u!1 &350467068
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 350467070}
-  - component: {fileID: 350467069}
-  m_Layer: 0
-  m_Name: ChristmasMusicManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &350467069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 350467068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ad19fb1b20fb714090039cd8e8ce771, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  transitionTime: 0.8
---- !u!4 &350467070
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 350467068}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.99339, y: -0.91526, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &482359657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1111,8 @@ MonoBehaviour:
   swipeClip: {fileID: 8300000, guid: 6f41c22b021b78544a1b16c264e1039c, type: 3}
   failClip: {fileID: 8300000, guid: 5f56df79929432e47ba2947220bf888c, type: 3}
   selectClip: {fileID: 8300000, guid: 581737d4437231f41b402c48e87b0a43, type: 3}
+  purchaseClip: {fileID: 8300000, guid: dd6a6643940cb0144b8eef5a95d5d124, type: 3}
+  unsuccesfulPurchaseClip: {fileID: 8300000, guid: 405f0037ef41ae74d8df705c164cd619, type: 3}
   isPlayingChristmas: 0
 --- !u!4 &688192578
 Transform:
@@ -16368,7 +16329,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -17571,6 +17532,5 @@ SceneRoots:
   - {fileID: 38201820}
   - {fileID: 2077879919}
   - {fileID: 2222205010468335367}
-  - {fileID: 350467070}
   - {fileID: 688192578}
   - {fileID: 2073115851}

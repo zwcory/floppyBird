@@ -16,6 +16,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip swipeClip;
     public AudioClip failClip;
     public AudioClip selectClip;
+    public AudioClip purchaseClip;
+    public AudioClip unsuccesfulPurchaseClip;
 
     public bool isPlayingChristmas;
 

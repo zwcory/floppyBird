@@ -248,6 +248,8 @@ MonoBehaviour:
   swipeClip: {fileID: 8300000, guid: 6f41c22b021b78544a1b16c264e1039c, type: 3}
   failClip: {fileID: 8300000, guid: 5f56df79929432e47ba2947220bf888c, type: 3}
   selectClip: {fileID: 8300000, guid: 581737d4437231f41b402c48e87b0a43, type: 3}
+  purchaseClip: {fileID: 8300000, guid: dd6a6643940cb0144b8eef5a95d5d124, type: 3}
+  unsuccesfulPurchaseClip: {fileID: 8300000, guid: 405f0037ef41ae74d8df705c164cd619, type: 3}
   isPlayingChristmas: 0
 --- !u!4 &398336947
 Transform:
@@ -6341,7 +6343,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6794,6 +6796,7 @@ MonoBehaviour:
   customization: {fileID: 0}
   coinsTextMenu: {fileID: 0}
   coinsTextCustomize: {fileID: 0}
+  mode: 
 --- !u!1 &2020682692
 GameObject:
   m_ObjectHideFlags: 0
