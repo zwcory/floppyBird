@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using TMPro;
 using UnityEngine;
-using static UnityEngine.InputManagerEntry;
+
 
 public class ModePurchaser : MonoBehaviour
 
@@ -44,6 +44,9 @@ public class ModePurchaser : MonoBehaviour
 
     void Start()
     {
+
+        
+
 
         InitializeModes();
         coins = PlayerPrefs.GetFloat("Coins", 0f);

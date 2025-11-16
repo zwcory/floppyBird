@@ -56,9 +56,10 @@ public class BirdScript : MonoBehaviour
             // stops collisions with pipes
             GetComponent<Collider2D>().enabled = false;
             myRigidbody2d.AddTorque(20f);
+            logic.gameOver();
+
         }
         birdIsAlive = false;
-        logic.gameOver();
         StartCoroutine(StopAfterFall());
     }
 

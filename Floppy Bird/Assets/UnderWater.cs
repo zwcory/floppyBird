@@ -14,6 +14,8 @@ public class UnderWater : MonoBehaviour
     public LogicScript logic;
     public bool birdIsAlive = true;
 
+    private bool isDiving;
+
     AudioManager audioManager;
     private void Awake()
     {
@@ -27,10 +29,51 @@ public class UnderWater : MonoBehaviour
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
-    // Update is called once per frame
+    //void Update()
+    //{
+
+    //    currentDepth = Mathf.Max(0, 12 - transform.position.y);
+
+    //    float buoyancyForce = (currentDepth / maxDepth) * buoyancyMultiplier;
+
+    //    if (birdIsAlive)
+    //    {
+    //        myRigidbody2d.AddForce(Vector2.up * buoyancyForce);
+    //        if (Input.GetKey(KeyCode.Space))
+    //        {
+    //            myRigidbody2d.AddForce(Vector2.down * diveForce);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        myRigidbody2d.AddForce(Vector2.up * buoyancyForce * 0.5f);
+    //    }
+    //    if (transform.position.y > 12 || transform.position.y < -12)
+    //    {
+    //        deadBird();
+    //    }
+    //}
+
+
     void Update()
     {
-        
+        if (birdIsAlive && Input.GetKey(KeyCode.Space))
+        {
+            isDiving = true;
+        }
+        else
+        {
+            isDiving = false;
+        }
+
+        if (transform.position.y > 12 || transform.position.y < -12)
+        {
+            deadBird();
+        }
+    }
+
+    void FixedUpdate()
+    {
         currentDepth = Mathf.Max(0, 12 - transform.position.y);
 
         float buoyancyForce = (currentDepth / maxDepth) * buoyancyMultiplier;
@@ -38,18 +81,14 @@ public class UnderWater : MonoBehaviour
         if (birdIsAlive)
         {
             myRigidbody2d.AddForce(Vector2.up * buoyancyForce);
-            if (Input.GetKey(KeyCode.Space))
+            if (isDiving)
             {
                 myRigidbody2d.AddForce(Vector2.down * diveForce);
             }
         }
         else
-        { 
-            myRigidbody2d.AddForce(Vector2.up * buoyancyForce * 0.5f);
-        }
-        if (transform.position.y > 12 || transform.position.y < -12)
         {
-            deadBird();
+            myRigidbody2d.AddForce(Vector2.up * buoyancyForce * 0.8f);
         }
     }
 
@@ -69,9 +108,10 @@ public class UnderWater : MonoBehaviour
             // stops collisions with pipes
             GetComponent<Collider2D>().enabled = false;
             myRigidbody2d.AddTorque(20f);
+            logic.gameOver();
+
         }
         birdIsAlive = false;
-        logic.gameOver();
         StartCoroutine(StopAfterFall());
     }
 

@@ -6367,8 +6367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDepth: 24
-  buoyancyMultiplier: 2
-  diveForce: 5
+  buoyancyMultiplier: 30
+  diveForce: 75
   singleDive: 0
   halfDive: 0
   logic: {fileID: 0}

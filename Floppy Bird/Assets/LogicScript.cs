@@ -55,7 +55,7 @@ public class LogicScript : MonoBehaviour
         totalCoins = PlayerPrefs.GetFloat("TotalCoins", 0f);
         plays = PlayerPrefs.GetInt("Plays" , 0);
         totalPoints += PlayerPrefs.GetInt("TotalPoints", 0);
-        highScore += PlayerPrefs.GetInt("HighScore", 0);
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
 
         highScoreText.text = highScore.ToString();
         achievementManager = GameObject.FindGameObjectWithTag("AchievementManager").GetComponent<AchievementManager>();
@@ -66,15 +66,15 @@ public class LogicScript : MonoBehaviour
 
     private void Update()
     {
-        // TESTING ONLY - Remove this later!
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            addScore(5); // Quickly add 5 points to test
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-           Debug.Log($"Pipe speed {pipeMoveScript.getMoveSpeed()}");
-        }
+    
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    addScore(5); 
+        //}
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //   Debug.Log($"Pipe speed {pipeMoveScript.getMoveSpeed()}");
+        //}
     }
 
     private void CheckDifficultyIncrease()
@@ -117,6 +117,7 @@ public class LogicScript : MonoBehaviour
         CheckDifficultyIncrease();
         if (playerScore > PlayerPrefs.GetInt("HighScore", 0))
         {
+            highScore = playerScore;
             highScoreText.text = playerScore.ToString();
             PlayerPrefs.SetInt("HighScore", playerScore);
             Debug.Log("New High Score " + playerScore);
@@ -133,7 +134,7 @@ public class LogicScript : MonoBehaviour
 
     public void gameOver()
     {
-        plays++;
+        plays+= 1 ;
         PlayerPrefs.SetFloat("Coins", coins);
         PlayerPrefs.SetFloat("TotalCoins", totalCoins);
         PlayerPrefs.SetInt("TotalPoints", totalPoints);
@@ -147,7 +148,9 @@ public class LogicScript : MonoBehaviour
     {
         coins += coin;
         totalCoins += coin;
-        
+        PlayerPrefs.SetFloat("Coins", coins);
+        PlayerPrefs.SetFloat("TotalCoins", totalCoins);
+        PlayerPrefs.Save();
     }
 
 }

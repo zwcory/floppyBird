@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -81,6 +80,7 @@ public class LevelLoader : MonoBehaviour
             transition_UI.SetTrigger("Start");
             while (timeElapsed < (transitionTime/2))
             {
+                AudioManager.instance.musicSource.Play();
                 AudioManager.instance.christmasSource.volume = Mathf.Lerp(1f, 0f, timeElapsed / transitionTime);
                 AudioManager.instance.musicSource.volume = Mathf.Lerp(0f, 1f, timeElapsed / transitionTime);
                 timeElapsed += Time.deltaTime;

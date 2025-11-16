@@ -26,7 +26,7 @@ public class AchievementManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-
+            PlayerPrefs.DeleteAll();
         }
         else
         {
@@ -103,7 +103,6 @@ public class AchievementManager : MonoBehaviour
 
         foreach (var achievement in achievements)
         {
-            Debug.Log(achievement.title);
             int wasAchieved = PlayerPrefs.GetInt(achievement.title, 0);
             if (wasAchieved > 0)
             {
